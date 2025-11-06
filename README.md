@@ -4,7 +4,7 @@
 
 This repository documents my progress in the Coursera course **Databases and SQL for Data Science with Python**, offered by IBM.  
 
-I am currently halfway through **Module 3**, focusing on intermdiate skills of LIKE, ORDER BY, and GROUP BY. 
+I am currently halfway through **Module 3**, focusing on intermediate skills of LIKE, ORDER BY, and GROUP BY. 
 
 ## 📚 Topics Covered So Far
 - LIKE- SELECT column1, column2, ... FROM table_name WHERE columnN LIKE pattern;
@@ -35,7 +35,7 @@ DB2: TRUNCATE TABLE table_name IMMEDIATE;
 
 
 
-I completed **Module 1**, focusing on applying the Basics - SELECT, INSERT, UPDATE, DELETE, COUNT, DISTINCT, and LIMIT to real-world SQL queires.  TABLE, ALTER, DROP, TRUNCATE.
+I completed **Module 1**, focusing on applying the Basics - SELECT, INSERT, UPDATE, DELETE, COUNT, DISTINCT, and LIMIT to real-world SQL queires. 
  
 ---
 
