@@ -47,3 +47,11 @@ SELECT evaluator_id,
 FROM evaluations
 GROUP BY evaluator_id
 ORDER BY avg_score DESC;
+
+---
+
+## 🚀 Next Steps
+- Complete Module 3 (joins and advanced filtering)
+- Begin Module 4: Integrating SQL with Python
+- Add more practice queries to this repo
+
