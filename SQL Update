@@ -1,0 +1,46 @@
+## 📚 Updated Learning
+
+I’ve successfully completed the Coursera/IBM course **Databases and SQL for Data Science with Python**, verified via [Credly](https://www.credly.com/badges/0d7da86e-b756-4867-a726-b82771ea634f/public_url).
+
+---
+
+## Module 4: Accessing Databases with Python
+Introduced Python integration with databases, focusing on SQLite and Db2 connections.
+
+### SQLite
+- connect(): sqlite3.connect()
+- cursor(): con.cursor()
+- execute(): cursor_obj.execute()
+- fetchall(): cursor_obj.fetchall()
+- fetchmany(): cursor_obj.fetchmany()
+- read_sql_query(): read_sql_query()
+- shape: dataframe.shape
+- close(): con.close()
+- CREATE TABLE: CREATE TABLE table_name (...)
+- barplot(): seaborn.barplot(x="x-axis_variable", y="y-axis_variable", data=data)
+- read_csv(): df = pd.read_csv('file_path.csv')
+- to_sql(): df.to_sql('table_name', index=False)
+- read_sql(): df = pd.read_sql(sql_query, conn)
+
+### Db2
+- connect(): ibm_db.connect('DATABASE=...; HOST=...; PORT=...; UID=...; PWD=...')
+- server_info(): ibm_db.server_info()
+- close(): con.close()
+- exec_immediate(): ibm_db.exec_immediate(conn, sql_statement)
+
+---
+
+## Module 3: SQL Functions and Implicit Joins
+Focused on functions and query operations to strengthen data analysis.
+
+- COUNT, AVG, SUM, MIN, MAX
+- ROUND, LENGTH, UCASE, LCASE
+- DISTINCT, DAY, CURRENT_DATE
+- DATEDIFF(), FROM_DAYS(), DATE_ADD(), DATE_SUB()
+- Subqueries
+- Implicit Inner Join
+- Implicit Cross Join
+
+---
+
+These skills build on my foundation in SQL and prepare me to apply database queries in real‑world QA and AI workflows.
