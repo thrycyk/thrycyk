@@ -9,7 +9,7 @@ I am currently halfway through **Module 3**, focusing on intermediate skills suc
 ---
 
 ## 📚 Module 3 Topics
-- **LIKE**: `SELECT column1, column2 FROM table_name WHERE columnN LIKE pattern;`
+- **LIKE**: `SELECT column1, column2 FROM table_name WHERE column LIKE pattern;`
 - **BETWEEN**: `SELECT column_name FROM table_name WHERE column_name BETWEEN value1 AND value2;`
 - **ORDER BY**: `SELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;`
 - **GROUP BY**: `SELECT column_name FROM table_name GROUP BY column_name;`
