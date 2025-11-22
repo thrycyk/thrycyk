@@ -1,3 +1,17 @@
+## 📖 Overview
+This repository documents my learning journey in SQL and Python for data science, including study notes from the Coursera/IBM course and a hands-on SQL evaluation project.
+
+## 🛠 Skills Demonstrated
+- Relational database design
+- Writing queries with filtering, grouping, and aggregation
+- SQL functions for analysis
+- Integrating SQL with Python (SQLite and Db2)
+
+## 💻 SQL Evaluation Project
+See `schema.sql`, `data.sql`, and `queries.sql` for a complete mini-project demonstrating applied SQL skills.
+
+## 📚 Study Notes
+
 ## Hi there 👋
 
 # Databases and SQL for Data Science with Python (Coursera, IBM)
