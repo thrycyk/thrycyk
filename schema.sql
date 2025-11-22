@@ -3,19 +3,27 @@ CREATE TABLE students (
     student_id INTEGER PRIMARY KEY,
     first_name TEXT NOT NULL,
     grade_level INTEGER,
-    reading_grade_level TEXT,   -- e.g., "On Grade Level", "Below Grade Level"
+    reading_grade_level TEXT,   
     homeroom_teacher TEXT
 );
 
 CREATE TABLE literacy_assessments (
-    assessment_id INTEGER PRIMARY KEY,
     student_id INTEGER,
-    reading_score INTEGER,
-    grade_level_score_range TEXT,   -- e.g., "70-80", "90-100"
-    strength TEXT,                  -- literacy strength (e.g., "Comprehension")
-    weakness TEXT,                  -- literacy weakness (e.g., "Fluency")
     fall_score INTEGER,
+    fall_strength TEXT,
+    fall_weakness TEXT,
+    fall_grade_level_score_range TEXT,
     winter_score INTEGER,
+    winter_strength TEXT,
+    winter_weakness TEXT,
+    winter_grade_level_score_range TEXT,
     spring_score INTEGER,
+    spring_strength TEXT,
+    spring_weakness TEXT,
+    spring_grade_level_score_range TEXT,
     FOREIGN KEY (student_id) REFERENCES students(student_id)
 );
+
+
+
+
