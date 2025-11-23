@@ -7,23 +7,26 @@ CREATE TABLE students (
     homeroom_teacher TEXT
 );
 
+DROP TABLE IF EXISTS literacy_assessments;
 CREATE TABLE literacy_assessments (
+    assessment_id INTEGER PRIMARY KEY,
     student_id INTEGER,
-    fall_score INTEGER,
-    fall_strength TEXT,
-    fall_weakness TEXT,
-    fall_grade_level_score_range TEXT,
-    winter_score INTEGER,
-    winter_strength TEXT,
-    winter_weakness TEXT,
-    winter_grade_level_score_range TEXT,
-    spring_score INTEGER,
-    spring_strength TEXT,
-    spring_weakness TEXT,
-    spring_grade_level_score_range TEXT,
+    season TEXT, -- 'Fall', 'Winter', 'Spring'
+    score INTEGER,
+    strength TEXT,
+    weakness TEXT,
+    grade_level_score_range TEXT,
     FOREIGN KEY (student_id) REFERENCES students(student_id)
 );
 
+
+CREATE TABLE teacher_feedback (
+    feedback_id INTEGER PRIMARY KEY,
+    student_id INTEGER,
+    season TEXT,
+    time_saved BOOLEAN,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
 
 
 

@@ -1,30 +1,52 @@
 -- queries.sql
 
--- Find average seasonal scores by student
-SELECT s.first_name,
-       AVG(l.fall_score + l.winter_score + l.spring_score)/3 AS avg_seasonal_score
-FROM students s
-JOIN literacy_assessments l ON s.student_id = l.student_id
-GROUP BY s.first_name
-ORDER BY avg_seasonal_score DESC;
+-- 1. List all students
+-- This query shows the roster of students with their grade level.
+SELECT first_name, last_name, grade_level
+FROM students;
 
--- List all students scoring above 90 in overall reading_score
-SELECT s.first_name, l.reading_score
-FROM literacy_assessments l
-JOIN students s ON l.student_id = s.student_id
-WHERE l.reading_score > 90;
+-- 2. Show Fall and Spring scores side by side
+-- Compare seasonal scores to see growth over time.
+SELECT students.first_name, f.score AS fall_score, sp.score AS spring_score
+FROM students
+JOIN literacy_assessments f ON students.student_id = f.student_id AND f.season = 'Fall'
+JOIN literacy_assessments sp ON students.student_id = sp.student_id AND sp.season = 'Spring';
 
--- Show literacy strengths and weaknesses by student
-SELECT s.first_name, l.strength, l.weakness
-FROM literacy_assessments l
-JOIN students s ON l.student_id = s.student_id;
+-- 3. Find students who grew by at least 10 points
+-- Identifies students with significant literacy improvement.
+SELECT students.first_name
+FROM students
+JOIN literacy_assessments f ON students.student_id = f.student_id AND f.season = 'Fall'
+JOIN literacy_assessments sp ON students.student_id = sp.student_id AND sp.season = 'Spring'
+WHERE sp.score >= f.score + 10;
 
--- Compare fall, winter, spring growth
-SELECT s.first_name,
-       l.fall_score,
-       l.winter_score,
-       l.spring_score,
-       (l.spring_score - l.fall_score) AS growth
-FROM literacy_assessments l
-JOIN students s ON l.student_id = s.student_id;
+-- 4. Count how many teachers saved time vs didn’t
+-- Summarizes teacher feedback (TRUE = saved time, FALSE = didn’t).
+SELECT feedback, COUNT(*) AS num_students
+FROM teacher_feedback
+GROUP BY feedback;
+
+-- 5. Connect growth to teacher feedback
+-- Links student growth directly to teacher efficiency outcomes.
+SELECT students.first_name,
+       (sp.score - f.score) AS growth,
+       teacher_feedback.feedback
+FROM students
+JOIN literacy_assessments f ON students.student_id = f.student_id AND f.season = 'Fall'
+JOIN literacy_assessments sp ON students.student_id = sp.student_id AND sp.season = 'Spring'
+JOIN teacher_feedback ON students.student_id = teacher_feedback.student_id 
+                      AND teacher_feedback.season = 'Spring';
+
+-- 6. Students meeting grade level expectations
+-- Shows which students are at or above grade level.
+SELECT first_name, grade_level, reading_grade_level
+FROM students
+WHERE reading_grade_level IN ('At Grade Level', 'Above Grade Level');
+
+-- 7. Count students at/above grade level
+-- Summarizes literacy achievement outcomes.
+SELECT reading_grade_level, COUNT(*) AS num_students
+FROM students
+WHERE reading_grade_level IN ('At Grade Level', 'Above Grade Level')
+GROUP BY reading_grade_level;
 
