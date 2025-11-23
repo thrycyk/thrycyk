@@ -18,32 +18,15 @@ SELECT students.first_name
 FROM students
 JOIN literacy_assessments f ON students.student_id = f.student_id AND f.season = 'Fall'
 JOIN literacy_assessments sp ON students.student_id = sp.student_id AND sp.season = 'Spring'
-WHERE sp.score >= f.score + 10;
+WHERE sp.score >= f.score + 20;
 
--- 4. Count how many teachers saved time vs didn’t
--- Summarizes teacher feedback (TRUE = saved time, FALSE = didn’t).
-SELECT feedback, COUNT(*) AS num_students
-FROM teacher_feedback
-GROUP BY feedback;
-
--- 5. Connect growth to teacher feedback
--- Links student growth directly to teacher efficiency outcomes.
-SELECT students.first_name,
-       (sp.score - f.score) AS growth,
-       teacher_feedback.feedback
-FROM students
-JOIN literacy_assessments f ON students.student_id = f.student_id AND f.season = 'Fall'
-JOIN literacy_assessments sp ON students.student_id = sp.student_id AND sp.season = 'Spring'
-JOIN teacher_feedback ON students.student_id = teacher_feedback.student_id 
-                      AND teacher_feedback.season = 'Spring';
-
--- 6. Students meeting grade level expectations
+-- 4. Students meeting grade level expectations
 -- Shows which students are at or above grade level.
 SELECT first_name, grade_level, reading_grade_level
 FROM students
 WHERE reading_grade_level IN ('At Grade Level', 'Above Grade Level');
 
--- 7. Count students at/above grade level
+-- 5. Count students at/above grade level
 -- Summarizes literacy achievement outcomes.
 SELECT reading_grade_level, COUNT(*) AS num_students
 FROM students
