@@ -1,12 +1,3 @@
-## 📊 Tableau Dashboards
-
-### Reading Levels by Grade
-![Reading Levels](images/Reading_Levels.png)  
-👉 [View Interactive Dashboard](https://public.tableau.com/app/profile/tracy.hrycyk/viz/Readinglevels/Dashboard1?publish=yes)
-
-### Students Who Meet Grade Level Standards
-![Standard Dashboard](images/Reading_Standards.png)  
-👉 [View Interactive Dashboard](https://public.tableau.com/app/profile/tracy.hrycyk/viz/ReadingStandards/Dashboard2?publish=yes)
 
 ## 📖 Overview
 This repository documents my learning journey in SQL and Python for data science, including study notes from the Coursera/IBM course and a hands-on SQL evaluation project.
@@ -17,18 +8,26 @@ This repository documents my learning journey in SQL and Python for data science
 - SQL functions for analysis
 - Integrating SQL with Python (SQLite and Db2)
 
-## 💻 SQL/Tableau Evaluation Project
+## 💻 Evaluation Project
 Includes a mini-project demonstrating applied SQL skills, and a Tableau evaluation presentation of data.
 
 ## 📊 K–12 Literacy Evaluation Project
-This project models how literacy data can be structured, analyzed, and visualized to support classroom decision‑making. It focuses on an imaginary teacher’s class and tracks student progress across Fall, Winter, and Spring assessments.
+This project models how literacy data can be structured and analyzed to support classroom decision‑making. It focuses on an imaginary teacher’s class and tracks student progress across Fall, Winter, and Spring assessments.
 
 * **Schema Design**: `schema.sql` defines tables for students and literacy assessments, including grade level, reading level, seasonal scores, and identified strengths/weaknesses.  
-* **Data Population**: `data.sql` provides realistic sample data for students in grades 3–4, with reading scores, grade‑level ranges, and literacy focus areas.  
-* **Query Analysis**: `queries.sql` demonstrates how to calculate average growth, identify students below grade level, and compare literacy weaknesses between Fall and Spring.  
-* **Visualization**: Tableau dashboards highlight student areas of weakness, track below‑level counts over time, and show average growth from Fall to Spring.  
+* **Data Population**: `data.sql` provides realistic sample data for students in grades 3–5, with reading scores, grade‑level ranges, and literacy focus areas.  
+* **Query Analysis**: `queries.sql` demonstrates how to identify students who achieved significant growth (20+ points from Fall to Spring), as well as those who began the year meeting grade‑level expectations.  
 
-Together, these files demonstrate the application of SQL and BI skills in a real-world K–12 context. They mirror the evaluation workflows used in educational AI quality analysis: designing experiments, identifying areas of improvement, and presenting insights in **educator‑friendly dashboards**.
+Together, these files demonstrate the application of SQL in a real-world K–12 context. They mirror the evaluation workflows used in educational AI quality analysis: designing experiments, identifying areas of improvement, and presenting insights in **educator‑friendly dashboards**.
+
+## 📊 Metabase Visualization Project
+This project demonstrates how data can be structured to support decision-making. Without the ability to load imaginary classroom data, I used the sample dataset available in Metabase.  
+
+A sample dashboard was created from the sales of imaginary products — Doohickeys, Gadgets, Gizmos, and Widgets.  
+
+📌 Explore the dashboard here: [Metabase Public Dashboard](http://localhost:3000/public/dashboard/addd1f62-6cdc-436a-b55d-448059cff71f)  
+📄 Supporting file:[Metabase Sample Dashboard PDF](reports/Metabase_Sample_Dashboard.pdf)
+
 
 ## 📚 Study Notes
 
