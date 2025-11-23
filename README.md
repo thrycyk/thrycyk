@@ -25,7 +25,7 @@ This project demonstrates how data can be structured to support decision-making.
 
 A sample dashboard was created from the sales of imaginary products — Doohickeys, Gadgets, Gizmos, and Widgets.  
 
-📄 Supporting file:[Metabase Sample Dashboard PDF](reports/Metabase_Sample_Dashboard.pdf)
+📄 Supporting file:[Metabase Sample Dashboard PDF](reports/Metabase_Sample_Dashboard.pdf)<br>
 📌 Public link not available because this project was run locally in Metabase.   
 
 
